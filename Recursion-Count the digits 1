@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static int countDigits(String str, int index) {
+        if (index == str.length()) {
+            return 0;
+        }
+        char current = str.charAt(index);
+        if (Character.isDigit(current)) {
+            return 1 + countDigits(str, index + 1);
+        } else {
+            return countDigits(str, index + 1);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        int digitCount = countDigits(input, 0);
+        System.out.println("The Count the digits: " + digitCount);
+    }
+}
