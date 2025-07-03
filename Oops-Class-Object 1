@@ -1,35 +1,30 @@
+import java.io.*;
 import java.util.*;
 
-class Rectangle {
-    int width, height;
-
-    Rectangle(int w, int h) {
-        width = w;
-        height = h;
+class Rectangle{
+    void area(int w,int h){
+        System.out.printf("Area of the Rectangle is %.2f\n",(float)(w*h));
     }
-
-    double getArea() {
-        return width * height;
-    }
-
-    double getPerimeter() {
-        return 2 * (width + height);
+    void perimeter(int w,int h)
+    {
+        System.out.printf("Perimeter of the Rectangle is %.2f",(float)(2*(w+h)));
     }
 }
-
 public class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int width = sc.nextInt();
-        int height = sc.nextInt();
 
-        if (width > 10 || height > 10) {
-            System.out.println("Hello User,Kindly Enter the valid Input.");
-        } else {
-            Rectangle rect = new Rectangle(width, height);
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int w=sc.nextInt();
+       int h=sc.nextInt();
+        if(w<=10 && h<=10)
+        {
+            Rectangle obj=new Rectangle();
             System.out.println("Here your Answers!!!");
-            System.out.printf("Area of the Rectangle is %.2f\n", rect.getArea());
-            System.out.printf("Perimeter of the Rectangle is %.2f\n", rect.getPerimeter());
+            obj.area(w,h);
+            obj.perimeter(w,h);
+        }
+        else{
+            System.out.println("Hello User,Kindly Enter the valid Input.");
         }
     }
 }
