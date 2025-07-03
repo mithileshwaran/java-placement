@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+
+class person{
+   String name;
+    int age;
+    person(String name,int age){
+            this.name=name;
+            this.age=age;
+    }
+            void display()
+            {
+                System.out.println("Welcome User!!!Here you Information");
+                System.out.println("You details are,");
+                System.out.println("My name is "+name);
+                System.out.println("My age is "+age);
+            }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String name=sc.nextLine();
+        int age=sc.nextInt();
+        
+        if(age>35)
+        {
+            System.out.println("Dear User,Kindly Enter the valid Input...");
+        }
+        else
+        {
+            person obj=new person(name,age);
+            obj.display();
+          
+        }  
+    }
+}
