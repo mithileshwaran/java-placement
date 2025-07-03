@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Rectangle {
+    int width, height;
+
+    Rectangle(int w, int h) {
+        width = w;
+        height = h;
+    }
+
+    double getArea() {
+        return width * height;
+    }
+
+    double getPerimeter() {
+        return 2 * (width + height);
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int width = sc.nextInt();
+        int height = sc.nextInt();
+
+        if (width > 10 || height > 10) {
+            System.out.println("Hello User,Kindly Enter the valid Input.");
+        } else {
+            Rectangle rect = new Rectangle(width, height);
+            System.out.println("Here your Answers!!!");
+            System.out.printf("Area of the Rectangle is %.2f\n", rect.getArea());
+            System.out.printf("Perimeter of the Rectangle is %.2f\n", rect.getPerimeter());
+        }
+    }
+}
